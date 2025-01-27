@@ -11,7 +11,12 @@ Este repositório contém uma aplicação NestJS para gerenciar métricas. Ele o
 
 ## Endpoints da API
 
-Abaixo estão os principais endpoints configurados para a aplicação.
+### **Documentação Swagger**
+- **Método:** `GET`
+- **Rota:** `/docs`
+- **Descrição:** Disponibiliza pagina web com a documentação dos endpoints.
+
+## Abaixo estão os principais endpoints configurados para a aplicação.
 
 ### 1. **Processar Métricas**
 - **Método:** `POST`
@@ -54,8 +59,8 @@ Abaixo estão os principais endpoints configurados para a aplicação.
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   cd nome-do-repositorio
+   git clone https://github.com/OpusJoao/desafio_greenyellow
+   cd desafio_greenyellow
    ```
 
 2. Instale as dependências:
@@ -68,10 +73,13 @@ Abaixo estão os principais endpoints configurados para a aplicação.
 
    Exemplo:
    ```bash
-   DATABASE_URL=postgres://user:password@localhost:5432/database_name
-   S3_BUCKET_NAME=seu-bucket
-   S3_ACCESS_KEY=seu-access-key
-   S3_SECRET_KEY=seu-secret-key
+    RABBITMQ_URL='amqp://guest:guest@host.docker.internal:5672?heartbeat=0'
+    RABBITMQ_CUSTOMER_PREFETCH_COUNT=10
+    DB_HOST=host.docker.internal
+    DB_PORT=5432
+    DB_USERNAME=myuser
+    DB_PASSWORD=mypassword
+    DB_NAME=mydatabase
    ```
 
 4. Inicie o servidor:
@@ -88,7 +96,7 @@ Abaixo estão os principais endpoints configurados para a aplicação.
 
 ## Testes
 
-Para rodar os testes unitários com Jest:
+Para rodar os testes unitários sobre a camada de negocios com o Jest:
 
 ```bash
 npm run check
